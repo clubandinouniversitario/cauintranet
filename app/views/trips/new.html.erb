@@ -1,0 +1,25 @@
+<div class="container">
+	<h1 class="mt-3"> Aviso de Salida </h1>
+
+	<%= form_with scope: :trip, url: trips_path, local: true, class:"mt-3" do |form| %>
+		<div class="form-group mt-2">
+			<div class="form-row align-items-center">
+		    	<div class="col-auto my-1">
+		    		<%= form.label :category, "Tipo de Actividad", :class=>"mr-sm-2" %>
+		    		<%= form.select :category, options_for_select([['Senderismo', 1], ['Montañismo', 2], ['Escalada', 3], ['Trail Running', 4], ['Caminata fuera de senderos', 5],['Empanadismo Tradicional', 6]], 2), {}, {:class=> "custom-select mr-sm-2"}  %>
+		    	</div>
+		    </div>
+			<div class="form-row align-items-center">
+		    	<div class="col-10 mt-1">
+		    		<%= form.label :name, "Título de la salida" %>
+		    		<br>
+		    		<%= form.text_field :name, placeholder: "K2 Invernal por la magic Line", class:"form-control" %>
+		    	</div>
+ 			</div>
+  			<div class="col mt-4 pl-0">
+    			<%= form.submit "Crear Aviso", :class=>"btn btn-primary col-5"%>
+  			</div>
+  		</div>
+	<% end %>
+</div>
+

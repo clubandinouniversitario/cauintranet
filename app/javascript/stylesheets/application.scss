@@ -1,0 +1,52 @@
+$body-bg: #f7f7f7;
+
+$theme-colors: (
+  "primary": #6fc7c0,
+  "secondary": #F2BB05,
+  "success": #14591D,
+  "info": #D67AB1,
+  "warning": #E98A15,
+  "danger": #F05D5E,
+  "light": #ffffff,
+  "dark": #2f3440
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+body, html{
+	height: 100%;
+}
+.bg {
+  /* The image used */
+	//background-image: url(image-path("fondotemporal.jpg"));
+
+	/* Full height */
+	height: 100%;
+
+	/* Center and scale the image nicely */
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: rgba(208, 208, 208, 0.67) !important;
+	background-blend-mode: color-dodge;
+}
+
+.bg-login {
+	background-color: #ffffffd9;
+}
+
+.btn-primary {
+	color: white;
+	&:hover{
+		color: $gray-100;
+	};
+}
+
+.informative {
+	text-align: center;
+	font-size: 10px;
+}
+
+
+
+
