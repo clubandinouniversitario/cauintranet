@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post '/signin' => 'users#signin'
   get 'signup' => 'users#new'
   post '/new' => 'users#new'
-  get 'devise/new' => 'devise#registrations#new'
+  get 'devise/new' => 'devise/registrations#new'
 
   match '*path' => 'users#home', :via => :get
  
