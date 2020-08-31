@@ -122,5 +122,8 @@ Rails.application.configure do
   # Generate digests for assets URLs  
   config.assets.digest = true
 
+  # Devise configuration
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
 
 end

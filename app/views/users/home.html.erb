@@ -1,0 +1,45 @@
+<div class="container-fluid pt-5 bg" style="background-image: url('<%= image_path('fondotemporal.jpg') %>'); background-repeat: no-repeat">
+	<div class="bg-login rounded mt-5 p-5 col-sm-10 col-md-5 col-xl-3 col-10 mx-auto ">
+		<div class="row">
+			<span class="success"><%= flash[:notice] %></span>
+		</div>
+		<div class="row">
+			<%= image_tag "caunormal.png", class: "col-md-10 col-xl-10 col-8 mx-auto  align-self-center p-3" %>
+		</div>
+		<%= form_tag "/signin", :method => "POST" do %>
+			<div class="form-group">
+				<%= label_tag :signin_email, "Correo: " %>
+				<%= text_field_tag :signin_email, nil, :placeholder => "Correo", :class => "form-control" %>
+		  	</div>
+		  	<div class="form-group">
+		  		<%= label_tag :signin_password, "Contraseña: " %>
+				<%= password_field_tag :signin_password, nil, :placeholder => "Contraseña", :class => "form-control" %>
+		  	</div>
+		  	<%= submit_tag "Ingresar", :class => "col mt-3 btn btn-primary align-self-center" %>
+		<% end %>
+		<p class="font-weight-light mt-1 mx-auto align-self-center informative">Acceso exclusivo para la Comunidad CAU</p>
+
+	</div>
+</div>
+
+
+  <%= yield %>
+
+
+<b>Information:</b> <span style="color:blue;"><%= flash[:notice] %></span><br><br><br>
+
+Hello, it's time for you to register!
+<br><br>
+<%= form_tag "/create", :method => "POST" do %>
+	<%= label_tag :email, "E-mail: " %>
+	<%= text_field_tag :email, nil, :placeholder => "E-mail" %>
+	<%= label_tag :firstname, "Firstname: " %>
+	<%= text_field_tag :firstname, nil, :placeholder => "Firstname" %>
+	<%= label_tag :lastname, "Lastname: " %>
+	<%= text_field_tag :lastname, nil, :placeholder => "Lastname" %>
+	<%= label_tag :password, "Password: " %>
+	<%= password_field_tag :password, nil, :placeholder => "Password" %>
+	<%= label_tag :password_confirmation, "Confirmation: " %>
+	<%= password_field_tag :password_confirmation, nil, :placeholder => "Confirmation" %><br>
+	<%= submit_tag "Sign up!" %>
+<% end %>

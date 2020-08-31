@@ -12,64 +12,70 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><%= image_tag "caubanner.png"%></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data- 
-      target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria- 
-      expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <a class="navbar-brand" href="#"><%= image_tag "caubanner.png"%></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data- 
+        target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria- 
+        expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="https://www.cau.cl">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
-            role="button" 
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Herramientas
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="https://www.cau.cl/?page_id=4140">Biblioteca</a>
-            <a class="dropdown-item" href="https://www.cau.cl/?page_id=3765">Talleres</a>
-            <a class="dropdown-item" href="https://www.cau.cl/?page_id=150">Calendario</a>
-            <a class="dropdown-item" href="https://www.cau.cl/?page_id=76">Préstamo de Equipo</a>
-            <a class="dropdown-item" href="">NotiCAU</a>
-            <a class="dropdown-item" href="http://www.cau.cl/wp-content/uploads/2009/11/Estatutos1-CAU-Originales-20041.doc">Estatutos</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.cau.cl/foro">Avisos de Salida</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.cau.cl/foro"></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
-        </li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="https://www.cau.cl">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+              role="button" 
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Herramientas
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="https://www.cau.cl/?page_id=4140">Biblioteca</a>
+              <a class="dropdown-item" href="https://www.cau.cl/?page_id=3765">Talleres</a>
+              <a class="dropdown-item" href="https://www.cau.cl/?page_id=150">Calendario</a>
+              <a class="dropdown-item" href="https://www.cau.cl/?page_id=76">Préstamo de Equipo</a>
+              <a class="dropdown-item" href="">NotiCAU</a>
+              <a class="dropdown-item" href="http://www.cau.cl/wp-content/uploads/2009/11/Estatutos1-CAU-Originales-20041.doc">Estatutos</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.cau.cl/foro">Avisos de Salida</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.cau.cl/foro"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.cau.cl/foro">Foro</a>
+          </li>
 
-      </ul>
-    </div>
-  </nav>
+        </ul>
+      </div>
+    </nav>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

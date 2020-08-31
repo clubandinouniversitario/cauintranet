@@ -1,0 +1,82 @@
+<div class="container-fluid pt-5 bg" style="background-image: url('<%= image_path('fondotemporal.jpg') %>'); background-repeat: no-repeat">
+	<div class="bg-login rounded mt-5 p-5 col-sm-10 col-md-5 col-xl-3 col-10 mx-auto ">
+		<div class="row">
+			<span class="success"><%= flash[:notice] %></span>
+		</div>
+		<div class="row">
+			<h2 class="mb-1 mx-auto">Regístrate</h2>
+		</div>
+		<%= form_tag "/new", :method => "POST" do %>
+			<div class="form-group">
+				<%= label_tag :signin_email, "Correo: " %>
+				<%= text_field_tag :signin_email, nil, :placeholder => "Correo", :class => "form-control" %>
+		  	</div>
+		  	<div class="form-group">
+				<%= label_tag :firstname, "Nombre: " %>
+				<%= text_field_tag :firstname, nil, :placeholder => "Nombre", :class => "form-control" %>
+		  	</div>
+		  	<div class="form-group">
+				<%= label_tag :lastname, "Apellido(s): " %>
+				<%= text_field_tag :lastname, nil, :placeholder => "Apellido(s)", :class => "form-control" %>
+		  	</div>
+		  	<div class="form-group">
+		  		<%= label_tag :signin_password, "Contraseña: " %>
+				<%= password_field_tag :signin_password, nil, :placeholder => "Contraseña", :class => "form-control" %>
+		  	</div>
+		  	<div class="form-group">
+		  		<%= label_tag :password_confirmation, "Contraseña: " %>
+				<%= password_field_tag :password_confirmation, nil, :placeholder => "Confirmar Contraseña", :class => "form-control" %>
+		  	</div>
+		  	<%= submit_tag "Registrarse", :class => "col mt-3 btn btn-primary align-self-center" %>
+		<% end %>
+		<p class="font-weight-light mt-1 mx-auto align-self-center informative">Acceso exclusivo para la Comunidad CAU</p>
+
+	</div>
+</div>
+
+
+  <%= yield %>
+
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
